@@ -39,7 +39,7 @@ for ( package in packages ) {
 
 Not shown; variable names:
 + `aDRG` = adult mouse DRG DEA results
-+ + `GO_{category}_results` = gene.ontology gene set enrichment analysis
++ `GO_{category}_results` = gene.ontology gene set enrichment analysis
 results
 
 # Plot aDRG Results
