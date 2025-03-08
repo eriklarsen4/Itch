@@ -40,13 +40,13 @@ Not shown; variable names:
 
 ``` r
 
-aDRG = read.csv("C:/Users/Erik/Downloads/DESeq2 Expression Results.csv")
+aDRG = read.csv("path/to/DESeq2 Expression Results.csv")
 
-aDRG_GO_BP_results <- read.table("C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_GO_analysis_BP.txt", sep = '\t', skip = 11, header = T, quote = '')
-aDRG_GO_CC_results <- read.table("C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_GO_analysis_CC.txt", sep = '\t', skip = 11, header = T, quote = '')
-aDRG_GO_MF_results <- read.table("C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_GO_analysis_MF.txt", sep = '\t', skip = 11, header = T, quote = '')
+aDRG_GO_BP_results <- read.table("path/to/aDRG_GO_analysis_BP.txt", sep = '\t', skip = 11, header = T, quote = '')
+aDRG_GO_CC_results <- read.table("path/to/aDRG_GO_analysis_CC.txt", sep = '\t', skip = 11, header = T, quote = '')
+aDRG_GO_MF_results <- read.table("path/to/aDRG_GO_analysis_MF.txt", sep = '\t', skip = 11, header = T, quote = '')
 
-aDRG_PANTHER_Pathways <- read.table("C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_PANTHER_Pathways.txt", sep = '\t', skip = 11, header = T, quote = '') |>
+aDRG_PANTHER_Pathways <- read.table("path/to/aDRG_PANTHER_Pathways.txt", sep = '\t', skip = 11, header = T, quote = '') |>
   dplyr::rename_with(~gsub(.x, pattern ='\\\\', replacement = '')) %>% # remove the .’s from the GO BP column
   dplyr::rename_with(~gsub(.x, pattern = 'Mus.musculus.\|upload_1\|\\\$', replacement = '')) %>% # rm appended/excess column name strings
   dplyr::rename(Pathway.Size = REFLIST21836) |>
@@ -242,7 +242,7 @@ Variable names (amend filepaths):
 
 e13_DRG <-
   read.csv(
-  "C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_e13_PARA.csv",
+  "path/to/DESeq2_result_file_on_GT_e13_PARA.csv",
   header = F
   )
 colnames(e13_DRG) = colnames(aDRG)[c(1:7)]
@@ -250,12 +250,12 @@ colnames(e13_DRG) = colnames(aDRG)[c(1:7)]
 write.table(e13_DRG |>
               dplyr::filter(AdjP <= 0.01) |>
               dplyr::select(GeneID) |> unlist() |> as.character(),
-            'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DEGs.csv',
+            'path/to/e13_DEGs.csv',
             row.names = F, col.names = F, sep = ‘,’)
 
 e13_DRG_GO_BP_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_BP.txt',
+  'path/to/e13_DRG_GO_analysis_BP.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -264,7 +264,7 @@ e13_DRG_GO_BP_results <-
 
 e13_DRG_GO_CC_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_CC.txt',
+  'path/to/e13_DRG_GO_analysis_CC.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -273,7 +273,7 @@ e13_DRG_GO_CC_results <-
 
 e13_DRG_GO_MF_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_MF.txt',
+  'path/to/e13_DRG_GO_analysis_MF.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -282,7 +282,7 @@ e13_DRG_GO_MF_results <-
 
 e13_PANTHER_Pathways <- 
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_PANTHER_Pathways.txt',
+  'path/to/e13_PANTHER_Pathways.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -291,19 +291,19 @@ e13_PANTHER_Pathways <-
 
 p0_DRG <-
   read.csv(
-  'C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_p0_mu234_wtBCD_PARA.csv',
+  'path/to/DESeq2_result_file_on_GT_p0_mu234_wtBCD_PARA.csv',
   header = T
   )
 
 write.table(p0_DRG |> 
               dplyr::filter(AdjP <= 0.01) |>
               dplyr::select(GeneID) |> unlist() |> as.character(),
-          'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DEGs.csv', 
+          'path/to/p0_DEGs.csv', 
           row.names = F, col.names = F, sep = ',')
 
 p0_DRG_GO_BP_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_BP.txt',
+  'path/to/p0_DRG_GO_analysis_BP.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -312,7 +312,7 @@ p0_DRG_GO_BP_results <-
 
 p0_DRG_GO_CC_results <- 
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_CC.txt',
+  'path/to/p0_DRG_GO_analysis_CC.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -321,7 +321,7 @@ p0_DRG_GO_CC_results <-
   
 p0_DRG_GO_MF_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_MF.txt',
+  'path/to/p0_DRG_GO_analysis_MF.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -330,7 +330,7 @@ p0_DRG_GO_MF_results <-
   
 p0_PANTHER_Pathways <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_PANTHER_Pathways.txt',
+  'path/to/p0_PANTHER_Pathways.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -339,19 +339,19 @@ p0_PANTHER_Pathways <-
 
 p10_DRG <-
   read.csv(
-  'C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_p10_mu123_wt1CE_PARA.csv',
+  'path/to/DESeq2_result_file_on_GT_p10_mu123_wt1CE_PARA.csv',
   header = T
   )
 
 write.table(p10_DRG |> 
               dplyr::filter(AdjP <= 0.01) |>
               dplyr::select(GeneID) |> unlist() |> as.character(),
-            'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DEGs.csv',
+            'path/to/p10_DEGs.csv',
             row.names = F, col.names = F, sep = ',')
 
 p10_DRG_GO_BP_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_BP.txt',
+  'path/to/p10_DRG_GO_analysis_BP.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -360,7 +360,7 @@ p10_DRG_GO_BP_results <-
   
 p10_DRG_GO_CC_results <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_CC.txt',
+  'path/to/p10_DRG_GO_analysis_CC.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -369,7 +369,7 @@ p10_DRG_GO_CC_results <-
   
 p10_DRG_GO_MF_results <- 
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_MF.txt',
+  'path/to/p10_DRG_GO_analysis_MF.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -378,7 +378,7 @@ p10_DRG_GO_MF_results <-
   
 p10_PANTHER_Pathways <-
   read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_PANTHER_Pathways.txt',
+  'path/to/p10_PANTHER_Pathways.txt',
   sep = '\t',
   skip = 11,
   header = T,
