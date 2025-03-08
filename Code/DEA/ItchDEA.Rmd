@@ -7,7 +7,8 @@ output: html_document
 
 # Overview
 
-This markdown was developed to formally modernize the differential expression data analysis of bulk RNA-seq data for **Dr. Martha Bhattacharya's lab** at the **University of Arizona** for the [Itch paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_tmem184b_is_necessary_for.18.aspx)
+This markdown was developed to formally "modernize" the differential expression data analysis of bulk RNA-seq data
+for **Dr. Martha Bhattacharya's lab** at the **University of Arizona** for the [Itch paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_tmem184b_is_necessary_for.18.aspx)
 
 ## Set up Environment {.tabset .tabset-pills .tabset-fade}
 
@@ -41,9 +42,9 @@ Not shown; variable names:
   + `GO_{category}_results` = gene.ontology gene set enrichment analysis results
 
 ```{r Read in aDRG RNAseq Results, include = T, message = F, warning = F, echo = F}
-aDRG = read.csv("C:/Users/Erik/Downloads/DESeq2 Expression Results.csv")
+aDRG = read.csv("path/to/DESeq2 Expression Results.csv")
 aTPM <- read.csv(
-  "C:/Users/Erik/Downloads/DESeq2_Normalized_Counts_Entire_Timecourse_by_Genotype.csv",
+  "path/to/DESeq2_Normalized_Counts_Entire_Timecourse_by_Genotype.csv",
   header = T
   ) |>
   dplyr::rename(GeneID = `X`) %>%
@@ -353,11 +354,11 @@ Not shown; variable names:
   + `({dev_stage_group})_GO_{category}_results` = gene.ontology results
 
 ```{r Read in eDRG Results, include = T, warning = F, message = F, echo = F}
-e13_DRG <- read.csv("C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_e13_PARA.csv", header = F)
+e13_DRG <- read.csv("path/to/DESeq2_result_file_on_GT_e13_PARA.csv", header = F)
 colnames(e13_DRG) = colnames(aDRG)[c(1:7)]
 
 e13_DRG_GO_BP_results <- read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_BP.txt',
+  'path/to/e13_DRG_GO_analysis_BP.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -388,7 +389,7 @@ e13_DRG_GO_BP_results <- read.table(
   dplyr::filter(GO_Term == 'neuron differentiation')
 
 eDRG_GO_results <- read.table(
-  'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_BP.txt',
+  'path/to/e13_DRG_GO_analysis_BP.txt',
   sep = '\t',
   skip = 11,
   header = T,
@@ -420,7 +421,7 @@ eDRG_GO_results <- read.table(
   
   dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_BP.txt',
+      'path/to/p0_DRG_GO_analysis_BP.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -453,7 +454,7 @@ eDRG_GO_results <- read.table(
   
   dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_BP.txt',
+      'path/to/p10_DRG_GO_analysis_BP.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -486,7 +487,7 @@ eDRG_GO_results <- read.table(
   
   dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_CC.txt',
+      'path/to/e13_DRG_GO_analysis_CC.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -520,7 +521,7 @@ eDRG_GO_results <- read.table(
   
     dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_CC.txt',
+      'path/to/p0_DRG_GO_analysis_CC.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -554,7 +555,7 @@ eDRG_GO_results <- read.table(
   
     dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_CC.txt',
+      'path/to/p10_DRG_GO_analysis_CC.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -588,7 +589,7 @@ eDRG_GO_results <- read.table(
   
     dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/e13_DRG_GO_analysis_MF.txt',
+      'path/to/e13_DRG_GO_analysis_MF.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -622,7 +623,7 @@ eDRG_GO_results <- read.table(
   
     dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p0_DRG_GO_analysis_MF.txt',
+      'path/to/p0_DRG_GO_analysis_MF.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -656,7 +657,7 @@ eDRG_GO_results <- read.table(
   
     dplyr::full_join(
     read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/p10_DRG_GO_analysis_MF.txt',
+      'path/to/p10_DRG_GO_analysis_MF.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -690,18 +691,18 @@ eDRG_GO_results <- read.table(
 
 
 p0_DRG <- read.csv(
-  "C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_p0_mu234_wtBCD_PARA.csv",
+  "path/to/DESeq2_result_file_on_GT_p0_mu234_wtBCD_PARA.csv",
   header = T
   )
 
 
 p10_DRG <- read.csv(
-  "C:/Users/Erik/Downloads/DESeq2_result_file_on_GT_p10_mu123_wt1CE_PARA.csv",
+  "path/to/DESeq2_result_file_on_GT_p10_mu123_wt1CE_PARA.csv",
   header = T
   )
 
 TPM <- read.csv(
-  "C:/Users/Erik/Downloads/DESeq2_Normalized_Counts_Entire_Timecourse_by_Genotype.csv",
+  "path/to/DESeq2_Normalized_Counts_Entire_Timecourse_by_Genotype.csv",
   header = T
   ) |>
   dplyr::rename(GeneID = `X`) %>%
@@ -723,7 +724,7 @@ TPM <- read.csv(
 ```
 
 ```{r Source the GO_INFO_fn and pass e13 DEGs through it, include = T, message = F, warning = F, echo = F}
-source('C:/Users/Erik/Desktop/Programming/R/Bio/Proteomics/GO_Analysis_Functions.R')
+source('path/to/GO_Analysis_Functions.R')
 GO_INFO_fn(list_of_interest = e13_DRG |>
              dplyr::filter(AdjP <= 0.05) |>
              dplyr::filter(!grepl(GeneID, # remove rRNAs, mitochondrial tRNAs, pseudogenes
