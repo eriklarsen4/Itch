@@ -12,7 +12,7 @@ paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_t
 
 ## Set up Environment
 
-#### **Load packages**
+#### **Attach packages**
 
 ``` r
 packages <- c('BiocManager',
