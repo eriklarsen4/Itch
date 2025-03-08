@@ -306,9 +306,9 @@ pheatmap(mat = Za[c(itch_index),2:9],
 
 #### **Read in eDRG Data**
 
-Not shown; variable names: + `({dev_stage_group})_DRG` = DRG DEA
-results + `({dev_stage_group})_GO_{category}_results` = gene.ontology
-results
+Not shown; variable names:
++ `({dev_stage_group})_DRG` = DRG DEA results
++ `({dev_stage_group})_GO_{category}_results` = gene.ontology results
 
 ``` r
 neuron_differentiation_DEGs <- GO_INFO_by_TERM_df |>
