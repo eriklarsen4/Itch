@@ -17,3 +17,11 @@ Source code has been revised since their original publications to facilitate bet
     + visualizations as bar plots
    
 + includes wrangling and visualization of time-series fluorescence microscopy
+
+At the time, raw sequencing files were pseudoaligned with Salmon on the UA HPC.
+The aligned reads were analyzed for differential expression on UseGalaxy.org, employing the DESeq2 algorithm.
+
+Tutorials for transcriptional analysis pipelines are in development.
+
+Included in these and analyses in other repos are tools I've developed to centralize downstream bioinformatic data regarding gene or protein lists.
+These tools will soon be included in/as packages and docker images.
