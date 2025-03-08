@@ -173,7 +173,7 @@ aDRG_GO_results |>
                 vjust = 1,
                 alpha = 1)
 ```
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20GO%20GSEA%20results-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20GO%20GSEA%20results-1.png)<!-- -->
 
 #### **PANTHER Pathways GSEA**
 
@@ -228,7 +228,7 @@ aDRG_PANTHER_Pathways |>
             alpha = 1)
             
 ```
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20PANTHER%20Pathways%20GSEA-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20PANTHER%20Pathways%20GSEA-1.png)<!-- -->
 
 # Read in and Prep eDRG Data
 
@@ -741,7 +741,7 @@ geom_text(aes(x = fold.Enrichment+1,
 facet_grid(~devStage)
 
 ```
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20Results-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20Results-1.png)<!-- -->
 
 #### **Plot Embryonic DRG PANTHER Pathway Results**
 
@@ -872,7 +872,7 @@ eDRG_PANTHER_Pathways |>
             alpha = 1) +
   facet_grid(~devStage)
 ```
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20PANTHER%20Results-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20PANTHER%20Results-1.png)<!-- -->
 
 #### **Paper Fig 5B**
 
@@ -940,7 +940,7 @@ eDRG_GO_results |>
             alpha = 1)
 ```
 
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Retro%20Paper%20Pathway%20fig-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Retro%20Paper%20Pathway%20fig-1.png)<!-- -->
 
 Here is the current analysis of the same data
 
@@ -984,4 +984,4 @@ eDRG_GO_results |>
             hjust = 0.5,
             alpha = 1)
 ```
-[](https://github.com/eriklarsen4/Itch/blob/main/Plots/Current%20Paper%20Pathway%20fig-1.png)
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Current%20Paper%20Pathway%20fig-1.png)<!-- -->
