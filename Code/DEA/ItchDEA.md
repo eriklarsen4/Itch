@@ -134,7 +134,7 @@ ggplot(data = aDRG) +
                   size = 5)
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20aDRG%20DEA%20results-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20DEA%20results-1.png)<!-- -->
 
 ## **Trx Profiling**
 
@@ -202,7 +202,7 @@ ggbiplot(PCA,
   scale_color_manual(values = c(rep("darkgoldenrod4", 4), rep("gray25", 4)))
 ```
 
-![](ItchDEAgit_files/figure-gfm/aDRG%20PCA-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/aDRG%20PCA-1.png)<!-- -->
 
 ### **Hierarchical Clustering the Z-scores**
 
@@ -269,7 +269,7 @@ pheatmap(mat = Za[,2:9],
          show_rownames = F)
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20aDRG%20heatmap-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20heatmap-1.png)<!-- -->
 
 - Zoom to cluster near Tmem184b
 
@@ -284,7 +284,7 @@ pheatmap(mat = Za[1135:1175,2:9],
          labels_row = Euclid_dist_ord_Genes[1135:1175])
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20aDRG%20Tmem%20Zoom%20heatmap-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20aDRG%20Tmem%20Zoom%20heatmap-1.png)<!-- -->
 
 - Zoom to itch-related genes
 
@@ -300,7 +300,7 @@ pheatmap(mat = Za[c(itch_index),2:9],
          labels_row = Euclid_dist_ord_Genes[c(itch_index)])
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20itch%20DEG%20heatmap-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20itch%20DEG%20heatmap-1.png)<!-- -->
 
 # Read in and Prep eDRG Data
 
@@ -383,7 +383,7 @@ ggplot(data = eDRG) +
   facet_grid(~devStage)
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20eDRG%20Results-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20Results-1.png)<!-- -->
 
 #### **MA**
 
@@ -417,7 +417,7 @@ ggplot(data = eDRG) +
   facet_grid(~devStage)
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20eDRG%20MA%20plots-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20eDRG%20MA%20plots-1.png)<!-- -->
 
 #### **Plot Embryonic DRG Heatmap (Paper Fig 5C)**
 
@@ -456,7 +456,7 @@ pheatmap(mat = Za[c(diff_index),2:7],
          labels_row = Euclid_dist_ord_Genes[c(diff_index)])
 ```
 
-![](ItchDEAgit_files/figure-gfm/Plot%20Paper%20eDRG%20Heatmap-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Plot%20Paper%20eDRG%20Heatmap-1.png)<!-- -->
 
 #### **Paper Fig 5B**
 
@@ -465,7 +465,7 @@ analyses, thus some terms are different in terms of their significance.
 
 - The terms in the paper have each been filtered directly
 
-![](ItchDEAgit_files/figure-gfm/Retro%20Paper%20Pathway%20fig-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Retro%20Paper%20Pathway%20fig-1.png)<!-- -->
 
 Here is the current analysis of the same data
 
@@ -513,4 +513,4 @@ eDRG_GO_results |>
             alpha = 1)
 ```
 
-![](ItchDEAgit_files/figure-gfm/Current%20Paper%20Pathway%20fig-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/Current%20Paper%20Pathway%20fig-1.png)<!-- -->
