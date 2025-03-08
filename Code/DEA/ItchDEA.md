@@ -37,8 +37,9 @@ for ( package in packages ) {
 
 #### **Read in aDRG Data**
 
-Not shown; variable names: + `aDRG` = adult mouse DRG DEA results +
-`GO_{category}_results` = gene.ontology gene set enrichment analysis
+Not shown; variable names:
++ `aDRG` = adult mouse DRG DEA results
+  + `GO_{category}_results` = gene.ontology gene set enrichment analysis
 results
 
 # Plot aDRG Results
