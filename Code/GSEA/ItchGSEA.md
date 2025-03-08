@@ -12,7 +12,7 @@ paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_t
 
 ## Set up Environment
 
-#### **Load packages**
+#### **Attach packages**
 
 ```r 
 
@@ -32,11 +32,10 @@ for ( package in packages ) {
 
 #### **Read in aDRG Data**
 
-Not shown; variable names:
+Variable names:
 
 - `aDRG` = adult mouse DRG DEA results
-  - `GO_{category}_results` = gene.ontology gene set enrichment analysis
-    results
+- `GO_{category}_results` = gene.ontology gene set enrichment analysis results
 
 ``` r
 
@@ -236,7 +235,7 @@ aDRG_PANTHER_Pathways |>
 Variable names (amend filepaths):
 
 - `({dev_stage_group})_DRG` = DRG DEA results
-  - `({dev_stage_group})_GO_{category}_results` = gene.ontology results
+- `({dev_stage_group})_GO_{category}_results` = gene.ontology results
 
 ```r
 
