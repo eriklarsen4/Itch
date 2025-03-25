@@ -8,7 +8,7 @@ Erik Larsen
 This markdown was developed to formally modernize the differential
 expression data analysis of bulk RNA-seq data for **Dr. Martha
 Bhattacharya’s lab** at the **University of Arizona** for the [Itch
-paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_tmem184b_is_necessary_for.18.aspx)
+paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC8854445/#_ad93_)
 
 ## Set up Environment
 
@@ -136,6 +136,9 @@ ggplot(data = aDRG) +
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/Volcano/Plot%20aDRG%20DEA%20results-1.png)<!-- -->
 
+As we discussed in the paper, we were intrigued by the number of pruriception receptors and pruriception-related genes that were
+differentially expressed (and only downregulated) in the dorsal root ganglion neurons of Tmem184b-mutant mice
+
 ## **Trx Profiling**
 
 ### **Z-score the Normalized Counts**
@@ -203,6 +206,8 @@ ggbiplot(PCA,
 ```
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/PCA/aDRG%20PCA-1.png)<!-- -->
+
+Clearly, samples are appropriately-clustered
 
 ### **Hierarchical Clustering the Z-scores**
 
@@ -460,14 +465,14 @@ pheatmap(mat = Za[c(diff_index),2:7],
 
 #### **Paper Fig 5B**
 
-The GeneOntology.org db has changed since 2018 when we did our original
-analyses, thus some terms are different in terms of their significance.
+The [geneontology.org](https://geneontology.org/) db has changed since 2018 when we did our original
+analyses, thus some `GO Terms` are different in terms of their significance.
 
 - The terms in the paper have each been filtered directly
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/PANTHER%20Pathways/Retro%20Paper%20Pathway%20fig-1.png)<!-- -->
 
-Here is the current analysis of the same data
+Here is the most recent analysis of the same data
 
 ``` r
 eDRG_GO_results |>
