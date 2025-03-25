@@ -876,8 +876,8 @@ eDRG_PANTHER_Pathways |>
 
 #### **Paper Fig 5B**
 
-The GeneOntology.org db has changed since 2018 when we did our original
-analyses, thus some terms are different in terms of their significance.
+The [geneontology.org](https://geneontology.org/) db has changed since 2018 when we did our original
+analyses, thus some `GO Terms` are different in terms of their significance.
 
 - The terms in the paper have each been filtered directly
 
