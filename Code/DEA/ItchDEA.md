@@ -136,8 +136,8 @@ ggplot(data = aDRG) +
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/Volcano/Plot%20aDRG%20DEA%20results-1.png)<!-- -->
 
-As we discussed in the paper, we were intrigued by the number of pruriception receptors and pruriception-related genes that were
-differentially expressed (and only downregulated) in the dorsal root ganglion neurons of Tmem184b-mutant mice
+As we discussed in the paper, we were intrigued by the number of **pruriception** (itch) **receptors** and pruriception-related genes that were
+differentially expressed (and only downregulated) in the dorsal root ganglion neurons of *Tmem184b*-mutant mice
 
 ## **Trx Profiling**
 
@@ -276,7 +276,7 @@ pheatmap(mat = Za[,2:9],
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/Heatmap/Plot%20aDRG%20heatmap-1.png)<!-- -->
 
-- Zoom to cluster near Tmem184b
+- Zoom to cluster near *Tmem184b*
 
 ``` r
   ## Visualize around the Tmem184b cluster
@@ -306,6 +306,9 @@ pheatmap(mat = Za[c(itch_index),2:9],
 ```
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/Heatmap/Plot%20itch%20DEG%20heatmap-1.png)<!-- -->
+
+Multiple itch-related genes are consistently downregulated across samples/mice, and significantly so,
+according to the DESeq2 results (volcano plot visualizing Wald test results)
 
 # Read in and Prep eDRG Data
 
@@ -390,6 +393,11 @@ ggplot(data = eDRG) +
 
 ![](https://github.com/eriklarsen4/Itch/blob/main/Plots/DEA/Volcano/Plot%20eDRG%20Results-1.png)<!-- -->
 
+As we discussed in the paper, we highlighted genes (navy) differentially expressed and involved in differentiation, since
+mutant mice did not show a lack of neurons, or (as far as we could tell) a lack of a subtype of neurons. The mice 
+have a number of differentially downregulated genes belonging to a particular DRG subtype known to convey certain itch 
+information to higher centers
+
 #### **MA**
 
 ``` r
@@ -465,8 +473,8 @@ pheatmap(mat = Za[c(diff_index),2:7],
 
 #### **Paper Fig 5B**
 
-The [geneontology.org](https://geneontology.org/) db has changed since 2018 when we did our original
-analyses, thus some `GO Terms` are different in terms of their significance.
+The [geneontology.org](https://geneontology.org/) db has changed since 2018 (the version we used when we did our original
+analyses), thus some `GO Terms` are different in a few ways.
 
 - The terms in the paper have each been filtered directly
 
