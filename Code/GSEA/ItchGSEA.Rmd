@@ -725,7 +725,7 @@ The `GeneOntology.org` db has changed since 2018 when we did our original analys
 
 ## **Old** Fig 5B
 
-```{r Retro Paper Pathway fig, include = T, message = F, warning = F, echo = T, fig.height=7, fig.width=12}
+```{r Retro Paper GO fig, include = T, message = F, warning = F, echo = T, fig.height=7, fig.width=12}
 eDRG_GO_results |>
   dplyr::filter(devStage == 'e13', GO_Type == 'BP') |>
   dplyr::arrange(FDR, desc(fold.Enrichment)) |> 
@@ -796,7 +796,7 @@ eDRG_GO_results |>
 
 ## **New** Fig 5B
 
-```{r Current Paper Pathway fig, include = T, message = F, warning = F, echo = T, fig.height=7, fig.width=12}
+```{r Current Paper GO fig, include = T, message = F, warning = F, echo = T, fig.height=7, fig.width=12}
 eDRG_GO_results |>
   dplyr::filter(devStage == 'e13', GO_Type == 'BP') |>
   dplyr::arrange(FDR, desc(fold.Enrichment)) |> 

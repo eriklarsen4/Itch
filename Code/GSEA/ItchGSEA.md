@@ -1,13 +1,22 @@
-Itch GSEA
-==============
-Erik Larsen
-2025-02-10
+---
+title: "Itch GSEA"
+author: "Erik Larsen"
+date: "2025-02-10"
+output:
+  html_document: 
+    code_folding: hide
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+    keep_md: true
+---
 
 # Overview
 
 This markdown was developed to formally modernize the gene set enrichment analysis of bulk RNA-seq data for **Dr. Martha Bhattacharya's lab** at the **University of Arizona** for the [Itch paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_tmem184b_is_necessary_for.18.aspx)
 
-# Set up Environment
+# Set up Environment {.tabset .tabset-pills .tabset-fade}
 
 ## Load packages
 
@@ -24,7 +33,7 @@ for ( package in packages ) {
 }
 ```
 
-## Write Functions for Importing and Wrangling Data
+## Write Functions for Importing and Wrangling Data {.tabset .tabset-pills .tabset-fade}
 
 ### aDRG import function
 
@@ -38,7 +47,7 @@ read_in_aDRG_GO_and_PANTHER_analysis_files <- function(category){
            category,
            '_results'),
     value = read.table(
-    paste0('path/to/file',
+    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
            'aDRG_GO_analysis_',
            stringr::str_to_upper(category),
            '.txt'
@@ -52,7 +61,7 @@ read_in_aDRG_GO_and_PANTHER_analysis_files <- function(category){
     assign(
       paste0('aDRG_PANTHER_Pathways'),
     value = read.table(
-      'path/to/file/aDRG_PANTHER_Pathways.txt',
+      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_PANTHER_Pathways.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -165,7 +174,7 @@ read_in_eDRG_GO_and_PANTHER_analysis_files <- function(age, category){
            category,
            '_results'),
     value = read.table(
-    paste0('path/to/file',
+    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
            age,
            '_DRG_GO_analysis_',
            stringr::str_to_upper(category),
@@ -181,7 +190,7 @@ read_in_eDRG_GO_and_PANTHER_analysis_files <- function(age, category){
     paste0(age,
            '_PANTHER_Pathways'),
     value = read.table(
-    paste0('path/to/file',
+    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
            age,
            '_PANTHER_Pathways.txt'
            ),
@@ -290,7 +299,7 @@ eDRG_GO_and_PANTHER_wrangling <- function(age, category){
 }
 ```
 
-# Import and Harmonize **aDRG** Data
+# Import and Harmonize **aDRG** Data {.tabset .tabset-pills .tabset-fade}
 
 
 
@@ -326,7 +335,7 @@ aDRG_GO_results <- aDRG_GO_BP_results |>
 rm(list = ls()[which(grepl(ls(), pattern = 'aDRG_GO_[A-Z]') == T)])
 ```
 
-# aDRG GSEA Results
+# aDRG GSEA Results {.tabset .tabset-pills .tabset-fade}
 
 + Plot the `aDRG GSEA results`
 
@@ -454,7 +463,7 @@ aDRG_PANTHER_Pathways |>
 ![](ItchGSEA_files/figure-html/Plot aDRG PANTHER Pathways GSEA-1.png)<!-- -->
 
 
-# Import and Harmonize **eDRG** Data
+# Import and Harmonize **eDRG** Data {.tabset .tabset-pills .tabset-fade}
 
 
 
@@ -516,7 +525,7 @@ p10_DRG_GO_results <- p10_DRG_GO_BP_results |>
 rm(list = ls()[which(grepl(ls(), pattern = '_DRG_GO_[A-Z]|aDRG_GO_[A-Z]') == T)])
 ```
 
-# eDRG GSEA Results
+# eDRG GSEA Results {.tabset .tabset-pills .tabset-fade}
 
 + Plot the `eDRG GSEA results`
 
@@ -690,7 +699,7 @@ eDRG_PANTHER_Pathways |>
 
 ![](ItchGSEA_files/figure-html/Plot eDRG PANTHER Results-1.png)<!-- -->
 
-# Paper Fig 5B
+# Paper Fig 5B {.tabset .tabset-pills .tabset-fade}
 
 The `GeneOntology.org` db has changed since 2018 when we did our original analyses, thus some terms are different in terms of their significance.
 
@@ -768,7 +777,7 @@ eDRG_GO_results |>
                      color = 'firebrick')
 ```
 
-![](ItchGSEA_files/figure-html/Retro Paper Pathway fig-1.png)<!-- -->
+![](ItchGSEA_files/figure-html/Retro Paper GO fig-1.png)<!-- -->
 
 ## **New** Fig 5B
 
@@ -809,6 +818,5 @@ eDRG_GO_results |>
                      alpha = 1)
 ```
 
-![](ItchGSEA_files/figure-html/Current Paper Pathway fig-1.png)<!-- -->
-
+![](ItchGSEA_files/figure-html/Current Paper GO fig-1.png)<!-- -->
 
