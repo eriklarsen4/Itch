@@ -395,7 +395,7 @@ aDRG_GO_results |>
             alpha = 1)
 ```
 
-![](ItchGSEA_files/figure-html/Plot aDRG GO GSEA results-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/Gene%20Ontology/Plot%20aDRG%20GO%20GSEA%20results-1.png)<!-- -->
 
 ## **aDRG** PANTHER Pathways GSEA
 
@@ -451,7 +451,7 @@ aDRG_PANTHER_Pathways |>
             alpha = 1)
 ```
 
-![](ItchGSEA_files/figure-html/Plot aDRG PANTHER Pathways GSEA-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/PANTHER%20Pathways/Plot%20aDRG%20PANTHER%20Pathways%20GSEA-1.png)<!-- -->
 
 
 # Import and Harmonize **eDRG** Data
@@ -606,7 +606,7 @@ eDRG_GO_results |>
   facet_grid(~devStage)
 ```
 
-![](ItchGSEA_files/figure-html/Plot eDRG Results-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/Gene%20Ontology/Plot%20eDRG%20Results-1.png)<!-- -->
 
 ## **eDRG** PANTHER Pathway GSEA Results
 
@@ -688,7 +688,7 @@ eDRG_PANTHER_Pathways |>
   facet_grid(~devStage)
 ```
 
-![](ItchGSEA_files/figure-html/Plot eDRG PANTHER Results-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/PANTHER%20Pathways/Plot%20eDRG%20PANTHER%20Results-1.png)<!-- -->
 
 # Paper Fig 5B
 
@@ -768,7 +768,7 @@ eDRG_GO_results |>
                      color = 'firebrick')
 ```
 
-![](ItchGSEA_files/figure-html/Retro Paper GO fig-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/Gene%20Ontology/Retro%20Paper%20GO%20fig-1.png)<!-- -->
 
 ## **New** Fig 5B
 
@@ -809,6 +809,7 @@ eDRG_GO_results |>
                      alpha = 1)
 ```
 
-![](ItchGSEA_files/figure-html/Current Paper GO fig-1.png)<!-- -->
+![](https://github.com/eriklarsen4/Itch/blob/main/Plots/GSEA/Gene%20Ontology/Current%20Paper%20GO%20fig-1.png)<!-- -->
+
 
 
