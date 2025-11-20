@@ -1,22 +1,13 @@
----
-title: "Itch GSEA"
-author: "Erik Larsen"
-date: "2025-02-10"
-output:
-  html_document: 
-    code_folding: hide
-    toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: true
-    keep_md: true
----
+Itch GSEA
+==============
+Erik Larsen
+2025-02-10
 
 # Overview
 
 This markdown was developed to formally modernize the gene set enrichment analysis of bulk RNA-seq data for **Dr. Martha Bhattacharya's lab** at the **University of Arizona** for the [Itch paper](https://journals.lww.com/pain/abstract/2022/05000/transmembrane_protein_tmem184b_is_necessary_for.18.aspx)
 
-# Set up Environment {.tabset .tabset-pills .tabset-fade}
+# Set up Environment
 
 ## Load packages
 
@@ -33,7 +24,7 @@ for ( package in packages ) {
 }
 ```
 
-## Write Functions for Importing and Wrangling Data {.tabset .tabset-pills .tabset-fade}
+## Write Functions for Importing and Wrangling Data
 
 ### aDRG import function
 
@@ -47,7 +38,7 @@ read_in_aDRG_GO_and_PANTHER_analysis_files <- function(category){
            category,
            '_results'),
     value = read.table(
-    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
+    paste0('path/to/file',
            'aDRG_GO_analysis_',
            stringr::str_to_upper(category),
            '.txt'
@@ -61,7 +52,7 @@ read_in_aDRG_GO_and_PANTHER_analysis_files <- function(category){
     assign(
       paste0('aDRG_PANTHER_Pathways'),
     value = read.table(
-      'C:/Users/Erik/Desktop/Programming/R/Bio/Itch/aDRG_PANTHER_Pathways.txt',
+      'path/to/file/aDRG_PANTHER_Pathways.txt',
       sep = '\t',
       skip = 11,
       header = T,
@@ -174,7 +165,7 @@ read_in_eDRG_GO_and_PANTHER_analysis_files <- function(age, category){
            category,
            '_results'),
     value = read.table(
-    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
+    paste0('path/to/file',
            age,
            '_DRG_GO_analysis_',
            stringr::str_to_upper(category),
@@ -190,7 +181,7 @@ read_in_eDRG_GO_and_PANTHER_analysis_files <- function(age, category){
     paste0(age,
            '_PANTHER_Pathways'),
     value = read.table(
-    paste0('C:/Users/Erik/Desktop/Programming/R/Bio/Itch/',
+    paste0('path/to/file',
            age,
            '_PANTHER_Pathways.txt'
            ),
@@ -299,7 +290,7 @@ eDRG_GO_and_PANTHER_wrangling <- function(age, category){
 }
 ```
 
-# Import and Harmonize **aDRG** Data {.tabset .tabset-pills .tabset-fade}
+# Import and Harmonize **aDRG** Data
 
 
 
@@ -335,7 +326,7 @@ aDRG_GO_results <- aDRG_GO_BP_results |>
 rm(list = ls()[which(grepl(ls(), pattern = 'aDRG_GO_[A-Z]') == T)])
 ```
 
-# aDRG GSEA Results {.tabset .tabset-pills .tabset-fade}
+# aDRG GSEA Results
 
 + Plot the `aDRG GSEA results`
 
@@ -463,7 +454,7 @@ aDRG_PANTHER_Pathways |>
 ![](ItchGSEA_files/figure-html/Plot aDRG PANTHER Pathways GSEA-1.png)<!-- -->
 
 
-# Import and Harmonize **eDRG** Data {.tabset .tabset-pills .tabset-fade}
+# Import and Harmonize **eDRG** Data
 
 
 
@@ -525,7 +516,7 @@ p10_DRG_GO_results <- p10_DRG_GO_BP_results |>
 rm(list = ls()[which(grepl(ls(), pattern = '_DRG_GO_[A-Z]|aDRG_GO_[A-Z]') == T)])
 ```
 
-# eDRG GSEA Results {.tabset .tabset-pills .tabset-fade}
+# eDRG GSEA Results
 
 + Plot the `eDRG GSEA results`
 
@@ -699,7 +690,7 @@ eDRG_PANTHER_Pathways |>
 
 ![](ItchGSEA_files/figure-html/Plot eDRG PANTHER Results-1.png)<!-- -->
 
-# Paper Fig 5B {.tabset .tabset-pills .tabset-fade}
+# Paper Fig 5B
 
 The `GeneOntology.org` db has changed since 2018 when we did our original analyses, thus some terms are different in terms of their significance.
 
@@ -819,4 +810,5 @@ eDRG_GO_results |>
 ```
 
 ![](ItchGSEA_files/figure-html/Current Paper Pathway fig-1.png)<!-- -->
+
 
